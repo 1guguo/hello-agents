@@ -22,6 +22,9 @@ class HelloAgentsLLM:
         
         if not all([self.model, apiKey, baseUrl]):
             raise ValueError("模型ID、API密钥和服务地址必须被提供或在.env文件中定义。")
+        print(f"🔧 初始化LLM客户端，模型：{self.model}，服务地址：{baseUrl}")
+        print(f"🔑 使用 API 密钥: {apiKey}")
+        
 
         self.client = OpenAI(api_key=apiKey, base_url=baseUrl, timeout=timeout)
 

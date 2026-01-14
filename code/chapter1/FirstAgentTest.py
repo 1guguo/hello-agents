@@ -64,7 +64,9 @@ def get_attraction(city: str, weather: str) -> str:
     # 或者，我们可以在主循环中传入，如此处代码所示
 
     if not api_key:
-        return "错误：未配置TAVILY_API_KEY。"
+        api_key = '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'
+        return "错误：未配置TAVILY_API_KEY。使用默认密钥仅供测试，请设置环境变量以使用您自己的密钥。"
+
 
     # 2. 初始化Tavily客户端
     tavily = TavilyClient(api_key=api_key)
@@ -135,9 +137,9 @@ import re
 
 # --- 1. 配置LLM客户端 ---
 # 请根据您使用的服务，将这里替换成对应的凭证和地址
-API_KEY = "YOUR_API_KEY"
-BASE_URL = "YOUR_BASE_URL"
-MODEL_ID = "YOUR_MODEL_ID"
+API_KEY = "sk-psoyxkvsqlsxxcwnuyegcibtabxbubdgvvkrenenxezbpcvv"
+BASE_URL = "https://api.siliconflow.cn/v1/chat/completions"
+MODEL_ID = "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B"
 os.environ['TAVILY_API_KEY'] = "YOUR_TAVILY_API_KEY"
 
 llm = OpenAICompatibleClient(
